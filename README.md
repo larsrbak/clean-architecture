@@ -28,6 +28,7 @@ Entities must depend on abstractions not on concretions. It states that the high
 - Typescript
     - Install: `yarn add -D typescript`
     - Scaffold configuration: `npx typescript --init`
+    - Node types: `yarn add -D @types/node`
 
 - Eslint 
     - Setup guide for eslint with typescript
@@ -37,3 +38,7 @@ Entities must depend on abstractions not on concretions. It states that the high
     - Install prettier `yarn add --dev prettier`
     - Guide for configuring prettier with eslint
         - https://prettier.io/docs/en/integrating-with-linters.html
+
+- Jest
+    - Setup guide for jest with eslint
+        - https://kulshekhar.github.io/ts-jest/user/install
