@@ -16,3 +16,24 @@ A client should never be forced to implement an interface that it doesn't use or
 
 ## Dependency Inversion Principle
 Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
+
+
+# Project setup
+
+- Node Version Manager
+    - Install NVM: https://github.com/nvm-sh/nvm
+    - Configure node version for project 
+        - `echo ##.## > .nvmrc`
+
+- Typescript
+    - Install: `yarn add -D typescript`
+    - Scaffold configuration: `npx typescript --init`
+
+- Eslint 
+    - Setup guide for eslint with typescript
+        - https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md
+    
+- Prettier
+    - Install prettier `yarn add --dev prettier`
+    - Guide for configuring prettier with eslint
+        - https://prettier.io/docs/en/integrating-with-linters.html
