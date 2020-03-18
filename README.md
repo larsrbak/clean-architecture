@@ -42,3 +42,7 @@ Entities must depend on abstractions not on concretions. It states that the high
 - Jest
     - Setup guide for jest with eslint
         - https://kulshekhar.github.io/ts-jest/user/install
+
+- Inversify
+    - Guide for Inversify JS
+        - https://github.com/inversify/InversifyJS
