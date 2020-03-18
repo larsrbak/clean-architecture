@@ -1,10 +1,26 @@
 import { myContainer } from "./inversify.config";
 import { TYPES } from "./types";
-import { Warrior } from "./interfaces";
+import { Warrior, Weapon } from "./interfaces";
 
-const ninja = myContainer.get<Warrior>(TYPES.Warrior);
+describe("", function() {
+  beforeEach(function() {
+    myContainer.snapshot();
 
-it('should inject dependencies', function () {
-    expect(ninja.fight()).toEqual("cut!"); // true
+    myContainer.unbind(TYPES.Weapon);
+    myContainer.bind<Weapon>(TYPES.Weapon).toConstantValue({
+      hit() {
+        return "mocked cut!";
+      }
+    });
+  });
+
+  afterEach(function() {
+    myContainer.restore();
+  });
+
+  it("should inject dependencies", function() {
+    const ninja = myContainer.get<Warrior>(TYPES.Warrior);
+    expect(ninja.fight()).toEqual("mocked cut!"); // true
     expect(ninja.sneak()).toEqual("hit!"); // true
+  });
 });
