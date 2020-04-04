@@ -24,6 +24,12 @@ module.exports = {
         'prettier'
     ],
     'rules': {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "@typescript-eslint/interface-name-prefix": [
+            "error",
+            {
+                "prefixWithI": "always"
+            }
+        ]
     }
 };
