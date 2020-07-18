@@ -1,5 +1,5 @@
 // Load modules in a directory.
-// Used for cli and functions.
+// Used for commands and functions.
 // Could very well be a package.
 
 import glob from "glob";
