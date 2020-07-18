@@ -27,7 +27,7 @@ function createModuleName(file: string, extension: string) {
  * Create function that at runtime loads a module and deterministically assigns a name to it
  */
 function createModuleLoader(folder: string, extension: string) {
-  return function (exports: object, file: string) {
+  return function (exports: { [key: string]: unknown }, file: string) {
     const name = createModuleName(file, extension);
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const module = require(resolve(folder, file));
@@ -39,7 +39,10 @@ function createModuleLoader(folder: string, extension: string) {
  * Load all modules in the folder with the extension
  * @returns an object of named modules with the specified extension
  */
-export default function (folder: string, extension = ".f.js") {
+export default function (
+  folder: string,
+  extension = ".f.js"
+): { [key: string]: unknown } {
   const files = glob.sync(`./**/*${extension}`, {
     cwd: resolve(folder),
     ignore: "./node_modules/**",
