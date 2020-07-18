@@ -1,3 +1,10 @@
+# Firebase
+
+## Installation
+Install and authenticate firebase cli
+```
+npm install -g firebase-tools
+```
 
 
 # SOLID
