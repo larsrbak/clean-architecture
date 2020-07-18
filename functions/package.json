@@ -1,7 +1,7 @@
 {
   "name": "clean-architecture-functions",
   "version": "1.0.0",
-  "description": "",
+  "description": "A starter template for firebase projects",
   "scripts": {
     "command": "node lib/commands/index.js",
     "lint": "eslint --ext .jsx,.js --fix .",
