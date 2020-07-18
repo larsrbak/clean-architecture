@@ -1,8 +1,10 @@
 import admin from "firebase-admin";
 import DocumentReference from "./DocumentReference";
 import Converter from "../../converters/Converter";
+import { Model } from "../../Model";
+import { firestore } from "../index";
 
-export default class CollectionReference<T> {
+export default class CollectionReference<T extends Model> {
   private readonly path: string;
   private readonly converter: Converter<T>;
 
@@ -16,9 +18,6 @@ export default class CollectionReference<T> {
   }
 
   get ref(): admin.firestore.CollectionReference<T> {
-    return admin
-      .firestore()
-      .collection(this.path)
-      .withConverter(this.converter);
+    return firestore.collection(this.path).withConverter(this.converter);
   }
 }
