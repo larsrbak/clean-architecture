@@ -6,6 +6,7 @@
     "command": "node lib/commands/index.js",
     "lint": "eslint --ext .jsx,.js --fix .",
     "prettier": "prettier --write .",
+    "prebuild": "rm -rf lib",
     "build": "tsc --outDir lib",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
