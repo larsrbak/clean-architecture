@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "lint": "eslint --ext .jsx,.js --fix .",
-    "build": "tsc",
+    "build": "tsc --outDir lib",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
