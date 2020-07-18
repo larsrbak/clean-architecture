@@ -1,7 +1,7 @@
 import Converter from "../../converters/Converter";
 import admin from "firebase-admin";
-import {Model} from "../../Model";
-import {firestore} from "../index";
+import { Model } from "../../Model";
+import { firestore } from "../index";
 
 export default class DocumentReference<T extends Model> {
   private readonly path: string;
