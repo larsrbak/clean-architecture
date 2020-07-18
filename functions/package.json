@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "lint": "eslint --ext .jsx,.js --fix .",
+    "prettier": "prettier --write .",
     "build": "tsc --outDir lib",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
