@@ -1,8 +1,10 @@
 import CollectionReference from "../firebase/firestore/CollectionReference";
 import { Model } from "../Model";
 
-// these classes are responsible for storing and receiving models.
-// Including building queries and partial document updates.
+/**
+ * A repository is responsible for storing and receiving models.
+ * This is also includes building queries and partial document updates.
+ */
 export default class Repository<T extends Model> {
   private collectionReference: CollectionReference<T>;
 
