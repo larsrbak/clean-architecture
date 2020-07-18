@@ -1,12 +1,12 @@
 import Converter from "./Converter";
-import { User } from "../user";
+import { User } from "../User";
 
 export default class UserConverter extends Converter<User> {
-  fromFirestore(snapshot: FirebaseFirestore.QueryDocumentSnapshot): User {
+  modelFromFirestore(snapshot: FirebaseFirestore.QueryDocumentSnapshot): User {
     return new User(snapshot.get("name"));
   }
 
-  toFirestore(user: User): FirebaseFirestore.DocumentData {
+  modelToFirestore(user: User): FirebaseFirestore.DocumentData {
     return {
       name: user.name,
     };
