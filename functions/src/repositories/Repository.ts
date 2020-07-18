@@ -1,8 +1,9 @@
 import CollectionReference from "../firebase/firestore/CollectionReference";
+import { Model } from "../Model";
 
 // these classes are responsible for storing and receiving models.
 // Including building queries and partial document updates.
-export default class Repository<T> {
+export default class Repository<T extends Model> {
   private collectionReference: CollectionReference<T>;
 
   constructor(collectionReference: CollectionReference<T>) {
@@ -25,7 +26,21 @@ export default class Repository<T> {
     return model;
   }
 
-  async create(id: string, model: T): Promise<void> {
-    await this.collectionReference.doc(id).ref.create(model);
+  async create(model: T): Promise<void> {
+    await this.collectionReference.doc(model.id).ref.create(model);
+  }
+
+  async delete(model: T): Promise<void> {
+    await this.collectionReference.doc(model.id).ref.delete();
+  }
+
+  async update(model: T): Promise<void> {
+    await this.collectionReference.doc(model.id).ref.update(model);
+  }
+
+  async add(model: T): Promise<T> {
+    const reference = await this.collectionReference.ref.add(model);
+    model.id = reference.id;
+    return model;
   }
 }
