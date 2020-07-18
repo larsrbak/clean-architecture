@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "command": "node lib/commands/index.js",
     "lint": "eslint --ext .jsx,.js --fix .",
     "prettier": "prettier --write .",
     "build": "tsc --outDir lib",
