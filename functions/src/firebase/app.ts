@@ -1,2 +1,5 @@
-// Firebase admin should only ever be initialised once.
-// To improve performance on cold starts only import firebase admin where it is required.
+import admin from "firebase-admin";
+
+export default function (): admin.app.App {
+  return admin.initializeApp();
+}
