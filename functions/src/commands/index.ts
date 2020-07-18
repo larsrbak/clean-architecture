@@ -16,7 +16,7 @@ function list(commands: { [key: string]: Command }) {
 }
 
 async function run([name, ...rest]: string[]) {
-  const commands = load(__dirname, "c.js");
+  const commands = load<Command>(__dirname, "c.js");
 
   if (!name) {
     console.log(`You must specify a command.`);
